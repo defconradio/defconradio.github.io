@@ -38,15 +38,11 @@
             </li>
             <span class="nav-sep">·</span>
             <li class="nav-item">
-              <button class="nav-btn" data-slide="1" aria-label="Navigate to Projects">projects</button>
+              <button class="nav-btn" data-slide="1" aria-label="Navigate to Uses">uses</button>
             </li>
             <span class="nav-sep">·</span>
             <li class="nav-item">
-              <button class="nav-btn" data-slide="2" aria-label="Navigate to Uses">uses</button>
-            </li>
-            <span class="nav-sep">·</span>
-            <li class="nav-item">
-              <button class="nav-btn" data-slide="3" aria-label="Navigate to Now">now</button>
+              <button class="nav-btn" data-slide="2" aria-label="Navigate to Now">now</button>
             </li>
           </ul>
         </nav>
@@ -145,81 +141,10 @@
             </div>
           </article>
 
-          <!-- ================= SLIDE 2: PROJECTS & WRITING ================= -->
-          <article class="carousel-item" id="projects" tabindex="0" aria-label="Slide 2: Projects & Writing">
+          <!-- ================= SLIDE 2: USES ================= -->
+          <article class="carousel-item" id="uses" tabindex="0" aria-label="Slide 2: Uses & Tech Stack">
             <div class="slide-header">
-              <span class="slide-tag">// 02: projects &amp; logs</span>
-              <span class="counter-text" style="font-size: 0.82rem;">recent work &amp; architecture</span>
-            </div>
-
-            <div class="content-grid">
-              <div class="card-panel">
-                <div class="row-head">
-                  <span class="row-index">001</span>
-                  <a href="#" class="row-title">p2p broadcast node</a>
-                </div>
-                <p class="row-desc" style="padding-left: 0;">
-                  high-efficiency lightweight relay architecture designed for low-bandwidth and high-latency radio frequencies. connects remote edge nodes without centralized dependencies.
-                </p>
-                <div class="row-meta" style="padding-left: 0; margin-top: auto;">
-                  <span class="tag-badge">go</span>
-                  <span class="tag-badge">mesh</span>
-                  <span class="tag-badge">nostr</span>
-                  <span class="tag-badge">sdr</span>
-                </div>
-              </div>
-
-              <div class="card-panel">
-                <div class="row-head">
-                  <span class="row-index">002</span>
-                  <a href="#" class="row-title">minimal static scaffold</a>
-                </div>
-                <p class="row-desc" style="padding-left: 0;">
-                  zero-framework single-card carousel architecture optimized for 100% desktop area and touch devices. responsive design, zero telemetry, and instant file:/// execution.
-                </p>
-                <div class="row-meta" style="padding-left: 0; margin-top: auto;">
-                  <span class="tag-badge">html5</span>
-                  <span class="tag-badge">css3</span>
-                  <span class="tag-badge">vanilla-js</span>
-                </div>
-              </div>
-
-              <div class="card-panel">
-                <div class="row-head">
-                  <span class="row-index">003</span>
-                  <a href="#" class="row-title">sovereign key manager</a>
-                </div>
-                <p class="row-desc" style="padding-left: 0;">
-                  offline signature verification utility with deterministic recovery and zero telemetry. implements taproot schnorr signatures and nostr nip-05 verification.
-                </p>
-                <div class="row-meta" style="padding-left: 0; margin-top: auto;">
-                  <span class="tag-badge">rust</span>
-                  <span class="tag-badge">bip-341</span>
-                  <span class="tag-badge">cryptography</span>
-                </div>
-              </div>
-
-              <div class="card-panel">
-                <div class="row-head">
-                  <span class="row-index">004</span>
-                  <a href="#" class="row-title">real-time stream ingest</a>
-                </div>
-                <p class="row-desc" style="padding-left: 0;">
-                  edge packet transcoder suitable for high latency and hostile network environments with taproot identifier verification and zero operator logging.
-                </p>
-                <div class="row-meta" style="padding-left: 0; margin-top: auto;">
-                  <span class="tag-badge">python</span>
-                  <span class="tag-badge">ffmpeg</span>
-                  <span class="tag-badge">p2p</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- ================= SLIDE 3: USES ================= -->
-          <article class="carousel-item" id="uses" tabindex="0" aria-label="Slide 3: Uses & Tech Stack">
-            <div class="slide-header">
-              <span class="slide-tag">// 03: uses &amp; stack</span>
+              <span class="slide-tag">// 02: uses &amp; stack</span>
               <span class="counter-text" style="font-size: 0.82rem;">daily gear &amp; environment</span>
             </div>
 
@@ -251,10 +176,10 @@
             </div>
           </article>
 
-          <!-- ================= SLIDE 4: NOW & CONNECT ================= -->
-          <article class="carousel-item" id="now" tabindex="0" aria-label="Slide 4: Now & Connect">
+          <!-- ================= SLIDE 3: NOW & CONNECT ================= -->
+          <article class="carousel-item" id="now" tabindex="0" aria-label="Slide 3: Now & Connect">
             <div class="slide-header">
-              <span class="slide-tag">// 04: now &amp; connect</span>
+              <span class="slide-tag">// 03: now &amp; connect</span>
               <div class="status-pill">
                 <span class="status-dot"></span>
                 <span>broadcasting &middot; 2026</span>
@@ -324,6 +249,17 @@
         </div>
       </div>
 
+      <!-- Walking Animation in the free horizontal area below the cards -->
+      <div class="walking-stage" aria-hidden="true">
+        <div class="walking-scene">
+          <div id="sky">
+            <div id="sea">
+              <div id="bern"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Carousel Navigation Controls Bar -->
       <footer class="carousel-controls" aria-label="Carousel Controls">
         <button class="ctrl-btn" id="prevBtn" aria-label="Previous Slide">
@@ -332,7 +268,7 @@
         </button>
 
         <div class="carousel-indicators">
-          <span class="counter-text"><span id="counterCurrent">01</span> / <span id="counterTotal">04</span></span>
+          <span class="counter-text"><span id="counterCurrent">01</span> / <span id="counterTotal">03</span></span>
           <div class="dots-wrapper" id="dotsWrapper"></div>
         </div>
 
