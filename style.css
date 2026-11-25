@@ -1,81 +1,128 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --color-border: rgba(255, 255, 255, 0.25);
+  --color-ink: #f0eee6;
+  --color-ink-hover: #151515;
+  --color-cream: #f5f5f0;
+  --font-mono: 'JetBrains Mono', 'Ubuntu Sans Mono', monospace;
+  --radius-sm: 4px;
+  --transition-fast: 0.2s ease;
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #000;
-}
-
-/* Fullscreen background video */
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Foreground content overlay */
-.content-overlay {
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: #000;
+  overflow: hidden;
 }
 
-/* Walk animation overlay anchored at the bottom */
+/* ==========================================================================
+   Top-Right Radio Player Widget (from valentina)
+   ========================================================================== */
+.nav-radio-item {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.radio-player-widget {
+  display: flex;
+  align-items: center;
+}
+
+.radio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.radio-btn:hover {
+  background-color: var(--color-ink);
+  color: var(--color-ink-hover);
+  border-color: var(--color-ink);
+}
+
+.radio-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #999999;
+  transition: background-color var(--transition-fast);
+}
+
+.radio-btn.playing .radio-status-dot {
+  background-color: #55ff55;
+  box-shadow: 0 0 8px #55ff55;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.radio-label {
+  font-weight: 600;
+}
+
+.radio-icon {
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+/* Sky parallax animation fixed to the bottom */
 #sky {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 287px;
-  background: url('walk/cielo.png') repeat-x;
+  background: url('assets/cielo.png') repeat-x;
   animation: movebg 9s linear infinite;
-  z-index: 2;
-  pointer-events: none;
 }
 
-/* Sea layer */
+/* Sea parallax animation */
 #sea {
+  background: url('assets/mar.png') repeat-x;
+  animation: movebg 6s linear infinite;
   position: relative;
   top: 145px;
-  height: 142px;
-  background: url('walk/mar.png') repeat-x;
-  animation: movebg 6s linear infinite;
   box-shadow: 10px 10px 45px rgba(0, 0, 0, 0.85) inset;
 }
 
-/* Bernard Bernoulli sprite walking */
+/* Bernard Bernoulli animation */
 #bern {
   width: 112px;
   height: 156px;
   margin: auto;
-  background: url('walk/bern.png') repeat-x;
+  background: url('assets/bern.png') repeat-x;
   animation: walk 0.8s steps(6) infinite;
   position: relative;
   bottom: 34px;
-  left: -840px;
+  left: 0px;
+
+
 }
 
-/* Walking character animation */
+/* Walk animation */
 @keyframes walk {
   0% { background-position: 0; }
   100% { background-position: -672px; }

@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DEF CON Radio</title>
+  <title>Walk</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Fullscreen background video (1920x1080) -->
-  <video id="bg-video" autoplay muted loop playsinline preload="auto">
-    <source src="walk/background.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Foreground content overlay -->
-  <div class="content-overlay">
+  <!-- Top Right Radio Player Widget (from valentina) -->
+  <div class="nav-radio-item">
+    <div class="radio-player-widget">
+      <button id="radioPlayBtn" class="radio-btn" aria-label="Reproducir radio en vivo">
+        <span class="radio-status-dot"></span>
+        <span class="radio-label">Radio</span>
+        <span class="radio-icon" id="radioPlayIcon">▶</span>
+      </button>
+      <audio id="radioAudio" preload="none" referrerpolicy="no-referrer" src="https://ice6.somafm.com/synphaera-128-mp3"></audio>
+    </div>
   </div>
 
-  <!-- Walk animation overlay at the bottom -->
   <div id="sky">
     <div id="sea">
       <div id="bern"></div>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
