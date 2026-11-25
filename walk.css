@@ -12,7 +12,7 @@ html,body {
   /* Cómo hay establecido un tamaño, centramos con margin:auto */
   margin:auto;  
   /* Cargamos el sprite (el repeat-x se puede omitir, por defecto se repite) */
-  background:url(images/bern.png) repeat-x;
+  background:url(bern.png) repeat-x;
   /* Aplicamos la animación "walk": 0.8seg, 6 viñetas y repetimos infinitamente */
   animation:walk .8s steps(6) infinite;
   /* Posicionamos el personaje sobre el camino de madera */
@@ -31,13 +31,13 @@ html,body {
 
 /* Animación del cielo. Efecto "Parallax", va más lento que el mar. */
 #sky {
-  background:url(images/cielo.png) repeat-X;
+  background:url(cielo.png) repeat-X;
   animation: movebg 9s linear infinite;
 }
 
 /* Animación del mar. */
 #sea {
-  background:url(images/mar.png) repeat-x;
+  background:url(mar.png) repeat-x;
   animation: movebg 6s linear infinite;
   /* Posicionamos el mar, para que no solape al cielo */
   position:relative;
@@ -56,7 +56,7 @@ html,body {
 #gb {
   width:104px;
   height:150px;
-  background:url(images/guy.png) no-repeat;
+  background:url(guy.png) no-repeat;
   animation:gbwalk 1s steps(6) infinite;
   margin:auto;
   position:relative;
