@@ -1,51 +1,263 @@
 
 <!DOCTYPE html>
-<html>
-<head>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>DEF CON Radio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>personal · home</title>
+  <meta name="description" content="Personal space — notes on systems, open protocols, and things built along the way.">
+  <meta name="theme-color" content="#151719">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Personal Site">
+  <meta property="og:description" content="Personal space — notes on systems, open protocols, and things built along the way.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <center>
-   <blockquote  class="twitter-tweet" data-media-max-width="1920"  align="center" data-lang="en" data-dnt="true" data-theme="dark"><p lang="zxx" dir="ltr"><a href="https://t.co/nqAKgYv0A3">https://t.co/nqAKgYv0A3</a></p>&mdash; 😈 (@pinkGobot) <a href="https://twitter.com/pinkGobot/status/1870649220643909936?ref_src=twsrc%5Etfw">December 22, 2024</a></blockquote>
+  <div class="app-container">
 
+    <!-- Top Navigation Header -->
+    <header class="site-header">
+      <a href="#about" class="brand" aria-label="Home">
+        <svg class="brand-icon" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <path d="M12 16H34L68 50L34 84H12L46 50ZM58 70H90V84H58Z" />
+        </svg>
+        <span class="brand-name">me<span class="brand-terminal">@internet:~$</span></span>
+      </a>
 
-   <p class="small">* Warning! this content may heal the damage caused by legacy media</p>
-   <p class="small">** for a better "experience" use stereo headphones</p>
-   <p class="big">This is totally not a PSYOP Right? RIGHT?</p>
-  </center>
+      <!-- Carousel Navigation Tabs -->
+      <nav aria-label="Page Sections">
+        <ul class="nav-tabs">
+          <li class="nav-item">
+            <button class="nav-btn active" data-slide="0" aria-label="Navigate to About">about</button>
+          </li>
+          <span class="nav-sep">·</span>
+          <li class="nav-item">
+            <button class="nav-btn" data-slide="1" aria-label="Navigate to Projects">projects</button>
+          </li>
+          <span class="nav-sep">·</span>
+          <li class="nav-item">
+            <button class="nav-btn" data-slide="2" aria-label="Navigate to Uses">uses</button>
+          </li>
+          <span class="nav-sep">·</span>
+          <li class="nav-item">
+            <button class="nav-btn" data-slide="3" aria-label="Navigate to Now">now</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
+    <!-- Main 1-Item Carousel Stage -->
+    <main class="carousel-stage" aria-label="Personal Portfolio Carousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack">
 
-  <div class="chat">
-    <script src="https://nocomment.fiatjaf.com/embed.js" id="nocomment" 
-            data-custom-base="nevent1qqsvz4kzyv9h8vske4et95nq9393y6ps28880l7qcy3qeksw2kc6rvszyqvcjq6w26u0vpk8yn695ykwsjs3sstzr2hhrq4p7ety8q9ecsnkkqcyqqqqqqgtjlel5"
-            data-placeholder="The Love Placeholder is here!"
-            data-skip="#"
-            data-relays='["wss://nos.lol"]'>
-    </script>
+          <!-- ================= SLIDE 1: ABOUT ================= -->
+          <article class="carousel-item" id="about" tabindex="0" aria-label="Slide 1: About Me">
+            <div class="slide-header">
+              <span class="slide-tag">// 01: about me</span>
+              <div class="status-pill">
+                <span class="status-dot"></span>
+                <span>online &middot; building</span>
+              </div>
+            </div>
+
+            <div class="profile-block">
+              <div class="profile-avatar-wrap">
+                <img src="./images/400x400.jpg" alt="Avatar" class="profile-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="profile-avatar-placeholder" style="display: none;">~/</div>
+              </div>
+              <div>
+                <h1 class="profile-name">hello, world</h1>
+                <p class="profile-role">builder &middot; systems &middot; open protocols</p>
+              </div>
+            </div>
+
+            <p class="lead-text">
+              welcome to my corner of the web. i build resilient software, explore decentralized networks, and write about digital autonomy. the focus is always on lightweight systems that do not break.
+            </p>
+
+            <div class="section-label">interests &amp; principles</div>
+            <p class="lead-text" style="font-size: 0.88rem; color: var(--cream-muted);">
+              minimalism over bloat &middot; local-first software &middot; reproducible builds &middot; peer-to-peer protocols &middot; long-term durability.
+            </p>
+
+            <div class="contact-actions">
+              <button class="action-btn primary" onclick="copyText('your-email@example.com', 'Email copied!')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+                <span>copy email</span>
+              </button>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="action-btn">
+                <span>github &nearr;</span>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="action-btn">
+                <span>x.com &nearr;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ================= SLIDE 2: PROJECTS & WRITING ================= -->
+          <article class="carousel-item" id="projects" tabindex="0" aria-label="Slide 2: Projects & Writing">
+            <div class="slide-header">
+              <span class="slide-tag">// 02: projects &amp; logs</span>
+              <span class="counter-text" style="font-size: 0.78rem;">recent work</span>
+            </div>
+
+            <div class="rows-list">
+              <div class="row-item">
+                <div class="row-head">
+                  <span class="row-index">001</span>
+                  <a href="#" class="row-title">p2p broadcast node</a>
+                </div>
+                <p class="row-desc">
+                  high-efficiency lightweight relay architecture designed for low-bandwidth and high-latency radio frequencies.
+                </p>
+                <div class="row-meta">
+                  <span class="tag-badge">go</span>
+                  <span class="tag-badge">mesh</span>
+                  <span class="tag-badge">nostr</span>
+                </div>
+              </div>
+
+              <div class="row-item">
+                <div class="row-head">
+                  <span class="row-index">002</span>
+                  <a href="#" class="row-title">minimal static scaffold</a>
+                </div>
+                <p class="row-desc">
+                  zero-framework single-card carousel architecture optimized for touch devices and clean typography.
+                </p>
+                <div class="row-meta">
+                  <span class="tag-badge">html5</span>
+                  <span class="tag-badge">css3</span>
+                  <span class="tag-badge">responsive</span>
+                </div>
+              </div>
+
+              <div class="row-item">
+                <div class="row-head">
+                  <span class="row-index">003</span>
+                  <a href="#" class="row-title">sovereign key manager</a>
+                </div>
+                <p class="row-desc">
+                  offline signature verification utility with deterministic recovery and zero telemetry.
+                </p>
+                <div class="row-meta">
+                  <span class="tag-badge">rust</span>
+                  <span class="tag-badge">cryptography</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= SLIDE 3: USES ================= -->
+          <article class="carousel-item" id="uses" tabindex="0" aria-label="Slide 3: Uses & Tech Stack">
+            <div class="slide-header">
+              <span class="slide-tag">// 03: uses &amp; stack</span>
+              <span class="counter-text" style="font-size: 0.78rem;">daily gear</span>
+            </div>
+
+            <div class="stack-grid">
+              <div class="stack-card">
+                <h4>system</h4>
+                <p>linux (arch / debian), sway / wayland, zsh, tmux</p>
+              </div>
+              <div class="stack-card">
+                <h4>editor &amp; tools</h4>
+                <p>neovim &amp; vs code, git, fzf, ripgrep, docker</p>
+              </div>
+              <div class="stack-card">
+                <h4>languages</h4>
+                <p>typescript, python, go, rust, posix shell</p>
+              </div>
+              <div class="stack-card">
+                <h4>hardware</h4>
+                <p>thinkpad x1, mechanical 60% board, sdr transceiver</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= SLIDE 4: NOW & CONNECT ================= -->
+          <article class="carousel-item" id="now" tabindex="0" aria-label="Slide 4: Now & Connect">
+            <div class="slide-header">
+              <span class="slide-tag">// 04: now &amp; connect</span>
+              <div class="status-pill">
+                <span class="status-dot"></span>
+                <span>current focus</span>
+              </div>
+            </div>
+
+            <p class="lead-text">
+              <strong>current focus:</strong> exploring mesh networking, deterministic build systems, and writing technical deep dives.
+            </p>
+
+            <div class="section-label">identity / nostr nip-05</div>
+            <div class="pubkey-box">
+              <span>defconradio@defconradio.github.io</span>
+              <button class="action-btn" style="padding: 4px 8px; font-size: 0.75rem;" onclick="copyText('defconradio@defconradio.github.io', 'NIP-05 copied!')">copy</button>
+            </div>
+
+            <div class="section-label">get in touch</div>
+            <div class="contact-actions">
+              <button class="action-btn primary" onclick="copyText('contact@example.com', 'Email copied!')">
+                <span>email</span>
+              </button>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="action-btn">
+                <span>github &nearr;</span>
+              </a>
+              <a href="#" class="action-btn">
+                <span>pgp key &nearr;</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Carousel Navigation Controls Bar -->
+      <footer class="carousel-controls" aria-label="Carousel Controls">
+        <button class="ctrl-btn" id="prevBtn" aria-label="Previous Slide">
+          <span>&larr;</span>
+          <span>prev</span>
+        </button>
+
+        <div class="carousel-indicators">
+          <span class="counter-text"><span id="counterCurrent">01</span> / <span id="counterTotal">04</span></span>
+          <div class="dots-wrapper" id="dotsWrapper"></div>
+        </div>
+
+        <button class="ctrl-btn" id="nextBtn" aria-label="Next Slide">
+          <span>next</span>
+          <span>&rarr;</span>
+        </button>
+      </footer>
+    </main>
+
+    <!-- Site Bottom Footer -->
+    <footer class="site-footer">
+      <div>
+        <span>&copy; <span id="year">2026</span></span>
+        <span> &middot; hosted on gh-pages</span>
+      </div>
+      <div class="footer-links">
+        <span class="keyboard-hint">[&larr; / &rarr; keys to browse]</span>
+        <a href="#about" onclick="document.getElementById('carouselTrack').parentElement.scrollIntoView({behavior: 'smooth'})">top &uarr;</a>
+      </div>
+    </footer>
+
   </div>
 
+  <!-- Toast notification banner -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- JavaScript controller -->
+  <script src="./script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));</script> 
-
 </html>
