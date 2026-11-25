@@ -1,11 +1,7 @@
 /* Eliminamos márgenes y ponemos fondo de página negro */
 html,body {
   margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
   background:#000;
-  overflow:hidden;
 }
 
 /* Bernard Bernoulli: Animación del personaje */
@@ -22,6 +18,7 @@ html,body {
   /* Posicionamos el personaje sobre el camino de madera */
   position:relative;
   bottom:34px;
+  left: -840px;
 }
 
 /* Animación de personaje caminando: Simplemente mueve el sprite sheet hacia la izquierda, realizando el movimiento. */
@@ -36,11 +33,6 @@ html,body {
 #sky {
   background:url(cielo.png) repeat-X;
   animation: movebg 9s linear infinite;
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:287px;
 }
 
 /* Animación del mar. */
@@ -50,7 +42,6 @@ html,body {
   /* Posicionamos el mar, para que no solape al cielo */
   position:relative;
   top:145px;
-  height:142px;
   /* Pequeño degradado interior para suavizar el mar. Puede consumir muchos recursos */
   box-shadow:10px 10px 45px RGBA(0,0,0, 0.85) inset;
 }
@@ -59,4 +50,22 @@ html,body {
 @keyframes movebg {
   0% { background-position:550px } 
   100% { background-position:0 }
+}
+
+/* OPCIONAL: Guybrush */
+#gb {
+  width:104px;
+  height:150px;
+  background:url(guy.png) no-repeat;
+  animation:gbwalk 1s steps(6) infinite;
+  margin:auto;
+  position:relative;
+  top:34px;
+  /* Ojo, muy costoso en rendimiento */
+  /* filter:drop-shadow(5px 5px 5px #000); */
+}
+
+@keyframes gbwalk {
+  0% { background-position:0 }
+  100% { background-position:-624px }
 }
