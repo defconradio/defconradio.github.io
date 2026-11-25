@@ -75,7 +75,7 @@ html, body {
 .radio-track-text {
   display: inline-block;
   white-space: nowrap;
-  animation: track-marquee 14s linear infinite;
+  animation: track-marquee 30s linear infinite;
 }
 
 .radio-track-info:hover .radio-track-text {

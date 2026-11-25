@@ -23,9 +23,13 @@ function initRadioPlayer() {
   audio.volume = 0.2;
   audio.referrerPolicy = 'no-referrer';
 
-  // Synphaera Radio (Space Music) from SomaFM
-  const STREAM_URL = 'https://ice6.somafm.com/synphaera-128-mp3';
-  const TRACK_METADATA_URL = 'https://somafm.com/songs/synphaera.json';
+  // Synphaera Radio (Space Music) from SomaFM (commented out):
+  // const STREAM_URL = 'https://ice6.somafm.com/synphaera-128-mp3';
+  // const TRACK_METADATA_URL = 'https://somafm.com/songs/synphaera.json';
+
+  // DEF CON Radio, http://somafm.com/defcon.pls
+  const STREAM_URL = 'https://ice6.somafm.com/defcon-128-mp3';
+  const TRACK_METADATA_URL = 'https://somafm.com/songs/defcon.json';
   let pollTimer = null;
 
   async function fetchTrackInfo() {
