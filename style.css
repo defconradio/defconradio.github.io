@@ -29,6 +29,68 @@ html, body {
   align-items: center;
 }
 
+/* Radio Live Track Ticker */
+.radio-track-info {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  transition: max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s ease,
+              padding 0.3s ease,
+              border-color 0.3s ease,
+              margin-right 0.3s ease;
+  pointer-events: none;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  margin-right: 0;
+}
+
+.radio-track-info.visible {
+  max-width: min(340px, calc(100vw - 160px));
+  opacity: 1;
+  padding: 0 10px;
+  border-color: var(--color-border);
+  margin-right: 8px;
+  pointer-events: auto;
+}
+
+.radio-track-scroll {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.radio-track-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: track-marquee 14s linear infinite;
+}
+
+.radio-track-info:hover .radio-track-text {
+  animation-play-state: paused;
+}
+
+@keyframes track-marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .radio-player-widget {
   display: flex;
   align-items: center;
