@@ -29,26 +29,50 @@
         <span class="brand-name">me<span class="brand-terminal">@internet:~$</span></span>
       </a>
 
-      <!-- Carousel Navigation Tabs -->
-      <nav aria-label="Page Sections">
-        <ul class="nav-tabs">
-          <li class="nav-item">
-            <button class="nav-btn active" data-slide="0" aria-label="Navigate to About">about</button>
-          </li>
-          <span class="nav-sep">·</span>
-          <li class="nav-item">
-            <button class="nav-btn" data-slide="1" aria-label="Navigate to Projects">projects</button>
-          </li>
-          <span class="nav-sep">·</span>
-          <li class="nav-item">
-            <button class="nav-btn" data-slide="2" aria-label="Navigate to Uses">uses</button>
-          </li>
-          <span class="nav-sep">·</span>
-          <li class="nav-item">
-            <button class="nav-btn" data-slide="3" aria-label="Navigate to Now">now</button>
-          </li>
-        </ul>
-      </nav>
+      <div class="header-right-actions">
+        <!-- Carousel Navigation Tabs -->
+        <nav aria-label="Page Sections">
+          <ul class="nav-tabs">
+            <li class="nav-item">
+              <button class="nav-btn active" data-slide="0" aria-label="Navigate to About">about</button>
+            </li>
+            <span class="nav-sep">·</span>
+            <li class="nav-item">
+              <button class="nav-btn" data-slide="1" aria-label="Navigate to Projects">projects</button>
+            </li>
+            <span class="nav-sep">·</span>
+            <li class="nav-item">
+              <button class="nav-btn" data-slide="2" aria-label="Navigate to Uses">uses</button>
+            </li>
+            <span class="nav-sep">·</span>
+            <li class="nav-item">
+              <button class="nav-btn" data-slide="3" aria-label="Navigate to Now">now</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Synphaera Radio Live Stream Player (from valentina) -->
+        <div class="nav-radio-item">
+          <div class="radio-player-widget">
+            <button id="radioPlayBtn" class="radio-btn" aria-label="Reproducir radio en vivo">
+              <span class="radio-status-dot"></span>
+              <span class="radio-label">Radio</span>
+              <span class="radio-icon" id="radioPlayIcon">▶</span>
+            </button>
+            <audio id="radioAudio" preload="none" referrerpolicy="no-referrer" src="https://ice6.somafm.com/synphaera-128-mp3"></audio>
+          </div>
+          <!-- MANGO Radio (saved for later):
+          <div class="radio-player-widget">
+            <button id="radioPlayBtn" class="radio-btn" aria-label="Toggle MangoRadio Stream">
+              <span class="radio-status-dot"></span>
+              <span class="radio-label">MANGO</span>
+              <span class="radio-icon" id="radioPlayIcon">▶</span>
+            </button>
+            <audio id="radioAudio" preload="none" src="https://stream.laut.fm/mangoradio"></audio>
+          </div>
+          -->
+        </div>
+      </div>
     </header>
 
     <!-- Main 1-Item Carousel Stage -->
@@ -68,7 +92,7 @@
 
             <div class="profile-block">
               <div class="profile-avatar-wrap">
-                <img src="./images/400x400.jpg" alt="Avatar" class="profile-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <img src="./images/400x400.png" alt="Avatar" class="profile-avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="profile-avatar-placeholder" style="display: none;">~/</div>
               </div>
               <div>

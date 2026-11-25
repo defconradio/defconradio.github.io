@@ -155,6 +155,13 @@ a:hover {
   }
 }
 
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -225,6 +232,65 @@ a:hover {
 .nav-sep {
   color: var(--cream-faint);
   user-select: none;
+}
+
+/* Radio Player Widget (from valentina) */
+.nav-radio-item {
+  display: flex;
+  align-items: center;
+}
+
+.radio-player-widget {
+  display: flex;
+  align-items: center;
+}
+
+.radio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--bg-badge);
+  border: 1px solid var(--border-main);
+  border-radius: var(--radius-sm);
+  color: var(--cream-main);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  line-height: 1;
+}
+
+.radio-btn:hover {
+  background-color: var(--bg-card-hover);
+  color: var(--cream-bright);
+  border-color: var(--border-strong);
+}
+
+.radio-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--cream-dim);
+  transition: background-color var(--transition-fast);
+}
+
+.radio-btn.playing .radio-status-dot {
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: radioPulse 1.6s infinite ease-in-out;
+}
+
+@keyframes radioPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.7; }
+}
+
+.radio-icon {
+  font-size: 0.7rem;
+  line-height: 1;
 }
 
 /* ----------------- The 1-Item Carousel (100% Scalable) ----------------- */
