@@ -10,13 +10,22 @@
 <body>
   <!-- Top Right Radio Player Widget (from valentina) -->
   <div class="nav-radio-item">
+    <div id="radioTrackInfo" class="radio-track-info" aria-live="polite">
+      <div class="radio-track-scroll">
+        <span id="radioTrackText" class="radio-track-text"></span>
+      </div>
+    </div>
     <div class="radio-player-widget">
       <button id="radioPlayBtn" class="radio-btn" aria-label="Reproducir radio en vivo">
         <span class="radio-status-dot"></span>
         <span class="radio-label">Radio</span>
         <span class="radio-icon" id="radioPlayIcon">▶</span>
       </button>
+      <!-- Synphaera Radio (commented out):
       <audio id="radioAudio" preload="none" referrerpolicy="no-referrer" src="https://ice6.somafm.com/synphaera-128-mp3"></audio>
+      -->
+      <!-- DEF CON Radio, http://somafm.com/defcon.pls -->
+      <audio id="radioAudio" preload="none" referrerpolicy="no-referrer" src="https://ice6.somafm.com/defcon-128-mp3"></audio>
     </div>
   </div>
 
