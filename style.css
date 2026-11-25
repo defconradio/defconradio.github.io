@@ -72,6 +72,7 @@ html, body {
   animation: walk 0.8s steps(6) infinite;
   position: relative;
   bottom: 34px;
+  left: -840px;
 }
 
 /* Walking character animation */
