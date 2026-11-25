@@ -51,14 +51,23 @@
   /**
    * Navigate to target slide index
    */
-  function goToSlide(index, updateHash = true) {
+  function goToSlide(index, updateHash = true, animate = true) {
     if (index < 0) index = 0;
     if (index >= total) index = total - 1;
 
     currentIndex = index;
 
     // Apply translation (each item is 100% width)
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    if (!animate) {
+      track.style.transition = 'none';
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      void track.offsetHeight; // force reflow
+      setTimeout(() => {
+        track.style.transition = '';
+      }, 60);
+    } else {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 
     // Update counter
     if (counterCurrent) {
@@ -80,10 +89,20 @@
       btn.classList.toggle('active', targetIndex === currentIndex);
     });
 
-    // Update URL hash for direct bookmarking/sharing
+    // Update URL hash for direct bookmarking/sharing (file:/// safe)
     const activeSlide = items[currentIndex];
     if (updateHash && activeSlide && activeSlide.id) {
-      history.replaceState(null, '', `#${activeSlide.id}`);
+      try {
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', `#${activeSlide.id}`);
+        } else {
+          window.location.hash = activeSlide.id;
+        }
+      } catch (err) {
+        try {
+          window.location.hash = activeSlide.id;
+        } catch (_) {}
+      }
     }
 
     // Scroll active slide content to top on navigation
@@ -168,22 +187,23 @@
   }
 
   // Parse URL hash on initial load
-  function initFromHash() {
+  function initFromHash(animate = false) {
     const hash = window.location.hash.replace('#', '');
     if (hash) {
       const matchIndex = items.findIndex((item) => item.id === hash);
       if (matchIndex !== -1) {
-        goToSlide(matchIndex, false);
+        goToSlide(matchIndex, false, animate);
         return;
       }
     }
-    goToSlide(0, false);
+    goToSlide(0, false, animate);
   }
 
-  initFromHash();
+  // Initialize immediately without animation
+  initFromHash(false);
 
   window.addEventListener('hashchange', () => {
-    initFromHash();
+    initFromHash(true);
   });
 
   // Copy to clipboard helper
