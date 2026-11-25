@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="walk.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEF CON Radio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="sky">
-  <div id="sea">
-    <div id="bern"></div>
+
+  <!-- Fullscreen background video (1920x1080) -->
+  <video id="bg-video" autoplay muted loop playsinline preload="auto">
+    <source src="walk/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Foreground content overlay -->
+  <div class="content-overlay">
   </div>
-</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
