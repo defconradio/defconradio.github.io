@@ -2,3 +2,5 @@ walk/
 *.scp
 .DS_Store
 *.txt
+IMG_*
+*.jpg
