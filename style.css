@@ -117,9 +117,9 @@ html, body {
 }
 
 .radio-btn:hover {
-  background-color: var(--color-ink);
-  color: var(--color-ink-hover);
-  border-color: var(--color-ink);
+  background-color: rgba(22, 22, 22, 0.85);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
 }
 
 /* Blink when inactive to attract user clicks */
@@ -185,6 +185,13 @@ html, body {
 .radio-icon {
   font-size: 0.7rem;
   line-height: 1;
+  opacity: 0.85;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.radio-btn:hover .radio-icon {
+  transform: scale(1.08);
+  opacity: 1;
 }
 
 /* ==========================================================================
@@ -321,9 +328,9 @@ html, body {
 }
 
 .footer-btn:hover {
-  background-color: var(--color-ink);
-  color: var(--color-ink-hover);
-  border-color: var(--color-ink);
+  background-color: rgba(22, 22, 22, 0.85);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
 }
 
 .github-btn {
@@ -335,6 +342,13 @@ html, body {
   height: 15px;
   fill: currentColor;
   flex-shrink: 0;
+  opacity: 0.85;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.github-btn:hover .footer-icon {
+  transform: scale(1.08);
+  opacity: 1;
 }
 
 /* Talk to Us Button (consistent squared style with radio and github) */
@@ -349,12 +363,12 @@ html, body {
   object-fit: contain;
   flex-shrink: 0;
   pointer-events: none;
-  opacity: 0.9;
-  transition: transform var(--transition-fast), filter var(--transition-fast), opacity var(--transition-fast);
+  opacity: 0.85;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 .talk-btn:hover .talk-icon {
-  filter: invert(1);
+  transform: scale(1.08);
   opacity: 1;
 }
 
@@ -364,15 +378,14 @@ html, body {
 }
 
 .talk-arrow {
-  color: currentColor;
-  opacity: 0.65;
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  color: rgba(255, 255, 255, 0.6);
+  transition: transform var(--transition-fast), color var(--transition-fast);
   flex-shrink: 0;
 }
 
 .talk-btn:hover .talk-arrow {
   transform: translateX(3px);
-  opacity: 1;
+  color: #ffffff;
 }
 
 @media (max-width: 480px) {
